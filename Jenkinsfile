@@ -19,17 +19,21 @@ pipeline {
         stage('Jacoco Coverage') {
             steps {
                 // Jacoco coverage steps here
-                sh 'mvn jacoco:prepare-agent test jacoco:report'
+                bat 'mvn jacoco:prepare-agent test jacoco:report'
             }
         }
 
         stage('Package Artifact') {
             steps {
                 // Package steps here
-                sh 'mvn package'
+                bat 'mvn package'
             }
         }
     }
+    triggers {
+        cron('H/3 * * * 1') // Runs every 3 minutes on Monday
+    }
+
 
     post {
         success {
