@@ -30,11 +30,7 @@ pipeline {
             }
         }
     }
-    triggers {
-        cron('H/3 * * * 1') // Runs every 3 minutes on Monday
-    }
-
-
+    
     post {
         success {
             echo 'Pipeline completed successfully!'
@@ -43,4 +39,8 @@ pipeline {
             echo 'Pipeline failed.'
         }
     }
+
+    triggers {
+        cron('H/3 * * * 1') // Runs every 3 minutes on Monday
+    }
 }
