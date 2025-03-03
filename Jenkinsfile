@@ -5,9 +5,7 @@ pipeline {
         cron('H/3 * * * 1') // Trigger the job every 3 minutes on Mondays
     }
 
-    environment {
-        // Define any environment variables here
-    }
+    
 
     stages {
         stage('Checkout') {
