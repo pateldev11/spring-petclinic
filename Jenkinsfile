@@ -42,5 +42,5 @@ pipeline {
 
     triggers {
         cron('H/3 * * * 1') // Runs every 3 minutes on Monday
-    }
+    }
 }
